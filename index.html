@@ -394,6 +394,38 @@
       </div> 
    </section> 
 
+<!-- Contact Form backend futuro agendamento -->
+<div class="contact-form fade-in">
+    <form id="contactForm">
+        <div class="form-group">
+            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required autocomplete="name">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required autocomplete="email">
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Seu Telefone" autocomplete="tel">
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="servico" name="servico" required autocomplete="off">
+                <option value="" disabled selected>Selecione um Serviço</option>
+                <option value="edicao_video">Edição de Vídeo</option>
+                <option value="edicao_imagem">Edição de Imagem</option>
+                <option value="edicao_audio">Edição de Áudio</option>
+                <option value="criar_site">Criação de Sites</option>
+                <option value="narracao">Narração</option>
+                <option value="criar_logo">Criação de Logomarcas</option>
+                <option value="pagina_vendas">Páginas de Vendas</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" id="mensagem" name="mensagem" placeholder="Sua Mensagem" required autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+    </form>
+</div>
+
+
  <!-- Footer -->
     <footer>
         <div class="container">
