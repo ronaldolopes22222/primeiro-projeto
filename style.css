@@ -614,99 +614,219 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: 5px;
-}/* Seção de Serviços */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste para garantir um layout mais flexível */
-    gap: 2rem;
-    margin-top: 3rem;
-    padding: 0 1rem;
-  }
-  
-  /* Cartão de Serviço */
-  .service-card {
-    background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Services Section */
+.services {
+    background: var(--dark);
+    color: var(--light);
     position: relative;
     overflow: hidden;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Ícone de serviço */
-  .service-icon {
+}
+
+.services:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0) 70%);
+    z-index: 0;
+}
+
+.services .section-title {
+    color: var(--light);
+    position: relative;
+    z-index: 1;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.03);
+    padding: 50px 40px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 5px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.service-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
+    z-index: -1;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 10%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+.service-icon {
     font-size: 3rem;
-    color: #4a90e2; /* Cor de destaque */
-    margin-bottom: 1.2rem;
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover .service-icon {
-    transform: scale(1.1); /* Aumenta o ícone no hover */
-  }
-  
-  /* Título do serviço */
-  .service-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  /* Preço do serviço */
-  .service-price {
-    margin: 1.2rem 0;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    opacity: 0.9;
-  }
-  
-  /* Botão de solicitação */
-  .service-btn {
+    color: var(--gold);
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    transform: rotateY(180deg);
+    color: var(--gold-light);
+}
+
+.service-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
     display: inline-block;
-    background: #4a90e2;
-    color: #fff;
-    padding: 0.8rem 1.4rem;
-    border-radius: 30px;
-    font-size: 1rem;
+}
+
+.service-title:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.service-card:hover .service-title:after {
+    width: 50px;
+}
+
+.service-card p {
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin: 25px 0;
     font-weight: 600;
+    display: inline-block;
+    position: relative;
+}
+
+.service-price:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.service-card:hover .service-price:after {
+    width: 100%;
+}
+
+/* Estilo dos botões de serviço - Versão WhatsApp */
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background: var(--gold);
+    color: var(--dark) !important;
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  
-  .service-btn:hover {
-    background: #2f6fbb;
+    border-radius: 30px;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efeito de brilho ao passar o mouse */
+.service-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition);
+}
+
+.service-btn:hover::before {
+    left: 100%;
+}
+
+.service-btn i {
+    margin-left: 10px;
+    transition: var(--transition);
+}
+
+.service-btn:hover {
+    background: var(--gold-light);
     transform: translateY(-3px);
-  }
-  
-  /* Animação de voltar ao topo */
-  .contact-back-to-top .back-to-top i {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.service-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Mantendo a animação do botão de voltar ao topo */
+.contact-back-to-top .back-to-top i {
     animation: bounce 2s infinite;
-  }
-  
-  @keyframes bounce {
+}
+
+@keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-      transform: translateY(-8px);
+        transform: translateY(-5px);
     }
     60% {
-      transform: translateY(-6px);
+        transform: translateY(-5px);
     }
-  }
-  
+}
+
 /* Portfolio Section */
 .portfolio {
     background: var(--light);
@@ -1136,68 +1256,58 @@ footer {
     margin-top: auto; /* Isso ajuda a manter o rodapé no final */
 }
 
-/* Efeito espelhado moderno */
+/* Efeito espelhado */
 footer::before {
     content: "";
     position: absolute;
     top: 50%;
-    left: -100%;
-    width: 200%;
+    left: -150%;
+    width: 250%;
     height: 200%;
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 30%, transparent 70%);
-    transform: skewX(-20deg);
-    transition: left 0.4s ease-in-out, opacity 0.4s ease;
-    opacity: 0.5;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3) 20%, transparent 80%);
+    transform: skewX(-30deg);
+    transition: left 0.5s ease-in-out;
+    opacity: 0.6;
 }
 
 footer:hover::before {
-    left: 100%;
-    opacity: 0.8;
+    left: 150%;
 }
 
-/* Layout do footer */
 .footer-content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 40px;
 }
 
 .footer-col {
     flex: 1;
-    min-width: 270px;
-    max-width: 350px;
+    min-width: 250px;
 }
 
-/* Logo do footer */
 .footer-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     display: inline-block;
-    font-weight: 700;
 }
 
 .footer-logo span {
-    color: #FFD700; /* Substitua pela sua cor de destaque */
-    font-size: 1.2em;
+    color: var(--gold);
 }
 
-/* Descrição do footer */
 .footer-about {
-    margin-bottom: 30px;
-    opacity: 0.75;
-    font-size: 1rem;
+    margin-bottom: 25px;
+    opacity: 0.7;
 }
 
-/* Títulos do footer */
 .footer-title {
-    font-size: 1.7rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
     position: relative;
-    padding-bottom: 12px;
-    font-weight: 600;
+    padding-bottom: 10px;
 }
 
 .footer-title::after {
@@ -1205,70 +1315,60 @@ footer:hover::before {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background: #FFD700; /* Substitua pela sua cor de destaque */
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
 }
 
-/* Links do footer */
 .footer-links {
     list-style: none;
-    padding-left: 0;
 }
 
 .footer-links li {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .footer-links a {
-    color: #dcdcdc; /* Cor neutra para links */
-    opacity: 0.8;
-    font-size: 1rem;
-    font-weight: 400;
+    color: var(--light);
+    opacity: 0.7;
+    transition: var(--transition);
     display: flex;
     align-items: center;
-    transition: opacity 0.3s, transform 0.3s;
 }
 
 .footer-links a i {
-    margin-right: 12px;
-    color: #FFD700;
-    font-size: 1rem;
+    margin-right: 10px;
+    color: var(--gold);
+    font-size: 0.8rem;
 }
 
 .footer-links a:hover {
     opacity: 1;
-    transform: translateX(8px);
+    transform: translateX(5px);
 }
 
-/* Itens de contato */
 .footer-contact-item {
     display: flex;
-    align-items: center;
-    margin-bottom: 18px;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .footer-contact-icon {
-    color: #FFD700;
-    margin-right: 18px;
-    font-size: 1.3rem;
+    color: var(--gold);
+    margin-right: 15px;
+    font-size: 1.2rem;
 }
 
-/* Rodapé */
 .footer-bottom {
     text-align: center;
-    padding-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    font-size: 1rem;
-    opacity: 0.8;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Copyright */
 .copyright {
     font-size: 0.9rem;
-    opacity: 0.6;
+    opacity: 0.7;
 }
-
 .back-to-top {
     /* POSICIONAMENTO */
     position: fixed;
