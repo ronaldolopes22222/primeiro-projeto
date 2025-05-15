@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
   <!-- Ícones para dispositivos e navegadores -->
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -44,66 +43,48 @@
     </div>
 
   <div class="main-content">
-    <!-- Navigation -->
-    <nav class="navbar">
-            <div class="logo-container">
-                <img src="logo.png" alt="Ronaldo" class="logo-img">
-
-            <a href="#" class="logo">RONALDO</span></a>
+   <!-- Navigation -->
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="logo.png" alt="Ronaldo" class="logo-img">
+    <a href="#" class="logo">RONALDO</a> <!-- Removi o </span> que estava sobrando -->
   </div>
-         <div class="menu-toggle">
-         <i class="fas fa-bars"></i>
-   </div>
-            <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#portfolio">Portfólio</a></li>
-            <li><a href="#testimonials">Depoimentos</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <video autoplay muted loop class="hero-video">
-            <source src="https://cdn.pixabay.com/video/2023/09/19/181342-866094713_large.mp4" type="video/mp4">
-        </video>        
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">RONALDO <span>SOLUÇÕES</span></h1>
-            <p class="hero-subtitle">Soluções criativas em edição de vídeos, imagens e desenvolvimento web. Transformamos suas ideias em realidade digital.</p>
-            <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary" data-text="Fale Conosco">Fale Conosco</a>
-            <a href="#services" class="btn" data-text="Nossos Serviços">Nossos Serviços</a>
-         </div>
-        </div>
-        <a href="#about" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </a>
- </section>
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#services">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#testimonials">Depoimentos</a></li>
+    <li><a href="#contact">Contato</a></li>
+  </ul>
+</nav>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Nós</h2>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3>Inovação e Criatividade Digital</h3>
-                    <p>Ronaldo Soluções é uma agência especializada em soluções digitais criativas, com foco em edição de vídeos, tratamento de imagens e desenvolvimento de sites.</p>
-                    <p>Nossa filosofia baseia-se em entender as necessidades únicas de cada cliente, criando produtos que combinam estética, funcionalidade e impacto visual.</p>
-                    <p>Com uma equipe de profissionais especializados, oferecemos serviços personalizados que elevam a presença digital de nossos clientes.</p>
-                    <a href="#contact" class="btn" style="margin-top: 30px;">Conheça Nosso Trabalho</a>
-                </div>
-                <div class="about-image fade-in delay-1">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipe Ronaldo Soluções" class="about-img">
-                    <div class="about-badge">
-                        <span>5+</span>
-                        <span>Anos de Experiência</span>
-                    </div>
-                </div>
-    </section>
-    
+<!-- About Section -->
+<section class="section about" id="about">
+  <div class="container">
+    <h2 class="section-title">Sobre Nós</h2>
+    <div class="about-content">
+      <div class="about-text fade-in">
+        <h3>Inovação e Criatividade Digital</h3>
+        <p>Ronaldo Soluções é uma agência especializada em soluções digitais criativas, com foco em edição de vídeos, tratamento de imagens e desenvolvimento de sites.</p>
+        <p>Nossa filosofia baseia-se em entender as necessidades únicas de cada cliente, criando produtos que combinam estética, funcionalidade e impacto visual.</p>
+        <p>Com uma equipe de profissionais especializados, oferecemos serviços personalizados que elevam a presença digital de nossos clientes.</p>
+        <a href="#contact" class="btn" style="margin-top: 30px;">Conheça Nosso Trabalho</a>
+      </div>
+      <div class="about-image fade-in delay-1">
+        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipe Ronaldo Soluções" class="about-img">
+        <div class="about-badge">
+          <span>5+</span>
+          <span>Anos de Experiência</span>
+        </div>
+      </div>
+    </div> <!-- fechando about-content -->
+  </div> <!-- fechando container -->
+</section> <!-- fechando about -->
+
 <!-- Services Section -->
 <section class="section services" id="services">
     <div class="container">
