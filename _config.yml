@@ -1,3 +1,5 @@
-title: Ronaldo Soluções
-description: Blog sobre segurança digital e tecnologia
-theme: minima
+navigation:
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog.html
