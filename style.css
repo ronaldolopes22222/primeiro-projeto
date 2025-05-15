@@ -354,103 +354,85 @@ img {
     color: var(--gold);
 }
 
-:root {
-    --gold: #06ebf3;
-    --gold-light: #e8c96a;
-    --dark: #1A1A1A;
-    --darker: #121212;
-    --light: #F8F5F2;
-    --light-gray: #e8e8e8;
-    --rose: #E8C4C4;
-    --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --transition-slow: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.15);
-    --section-padding: 120px 5%;
+/* Estilo futurista para a seção do portfólio */
+.portfolio-section {
+    background: var(--darker);
+    padding: 100px 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Exo 2', sans-serif;
-    /* outras propriedades */
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Exo 2', sans-serif;
-    font-weight: 600;
-    /* outras propriedades */
-}
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: var(--transition);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section {
-    padding: var(--section-padding);
+.portfolio-section .section-title {
+    color: var(--gold);
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(90deg, var(--gold), #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: relative;
+    text-shadow: 0 0 10px rgba(6, 235, 243, 0.3);
 }
 
-.section-title {
-    font-size: 3.5rem;
+.portfolio-filter {
     text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-    color: var(--dark);
+    margin-bottom: 50px;
 }
 
-.section-title:after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--gold);
-    transition: var(--transition-slow);
-}
-
-.section-title:hover:after {
-    width: 120px;
-    background: var(--gold-light);
-}
-
-.btn {
-    display: inline-block;
-    padding: 18px 45px;
-    background: var(--gold) !important; /* Garante o fundo dourado */
-    color: var(--dark) !important; /* Garante o texto preto */
+.portfolio-filter .filter-btn {
+    background-color: transparent;
     border: 2px solid var(--gold);
-    font-family: 'Montserrat', sans-serif;
+    color: var(--gold);
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-size: 0.9rem;
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    border-radius: 30px; /* Bordas arredondadas */
+}
+
+.portfolio-filter .filter-btn:hover,
+.portfolio-filter .filter-btn.active {
+    background-color: var(--gold);
+    color: var(--dark);
+    box-shadow: 0 0 15px var(--gold);
+}
+
+.portfolio-item {
+    background: #111;
+    border: 1px solid var(--gold);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(6, 235, 243, 0.4);
+}
+
+.portfolio-item h3 {
+    color: var(--gold);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.portfolio-item p {
+    color: var(--light-gray);
+    margin: 10px 0 20px;
+}
+
+.portfolio-item a {
+    background: linear-gradient(90deg, var(--gold), #8a2be2);
+    color: var(--dark);
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: var(--transition);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.portfolio-item a:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px var(--gold);
 }
 
 /* Reflexo espelhado */
